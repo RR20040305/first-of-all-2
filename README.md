@@ -4,4 +4,4 @@
 Этот репозиторий является каркасом для будущего веб-приложения. 
 
 ## Ссылки 
-- [Публичная страница на GitHub Pages](https://rr20040305.github.io/first-of-all/)
+- [Публичная страница на GitHub Pages](https://rr20040305.github.io/first-of-all-2/)
