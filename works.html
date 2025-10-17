@@ -3,7 +3,7 @@
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Контакты</title> 
+    <title>Мои работы</title> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrapicons@1.11.1/font/bootstrap-icons.css">
     
@@ -81,7 +81,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="works.html">
+                        <a class="nav-link active" href="works.html">
                             <i class="bi bi-newspaper me-1"></i>Работы
                         </a>
                     </li>
@@ -91,7 +91,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="contacts.html">
+                        <a class="nav-link" href="contacts.html">
                             <i class="bi bi-telephone me-1"></i>Контакты
                         </a>
                     </li>
@@ -106,88 +106,87 @@
                 <div class="card-header bg-light">
                     <h3 class="card-title h5 mb-0">
                         <i class="bi bi-person-circle text-primary"></i> 
-                        Свяжитесь со мной
+                        Мои работы
                     </h3>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        По любым вопросам и предложениям вы можете написать мне.
+                        Здесь вы можете ознакомиться со всеми моими работами за последние шесть лет.
                     </p>
-                </div>
-                <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#contactModal">
-                    <i class="bi bi-envelope me-2"></i>Написать сообщение
-                </button>
-
-                <div class="modal fade" id="contactModal" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Форма обратной связи</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="contactForm">
-                                    <!-- Имя -->
-                                    <div class="mb-3">
-                                        <label class="form-label">Имя:</label>
-                                        <input type="text" class="form-control" placeholder="Введите ваше имя" required>
-                                    </div>
-                                    
-                                    <!-- Email -->
-                                    <div class="mb-3">
-                                        <label class="form-label">Email:</label>
-                                        <input type="email" class="form-control" placeholder="Введите ваш email" required>
-                                    </div>
-                                    
-                                    <!-- Сообщение -->
-                                    <div class="mb-3">
-                                        <label class="form-label">Сообщение:</label>
-                                        <textarea class="form-control" rows="4" placeholder="Введите ваше сообщение..." required></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                                <button type="submit" form="contactForm" class="btn btn-primary">Отправить сообщение</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-body">
                     <p class="card-text">
-                        Контакты:
+                        Они разделены на виды для удобства.
                     </p>
-
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="me-3 text-primary">
-                            <i class="bi bi-envelope-fill fs-5"></i>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="img/gladiator.png" class="card- img-top" alt="CG арты" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">CG арты</h5>
+                                </div>
+                                <a href="page.html" class="btn btn-outline-danger">
+                                    Посмотреть все
+                                </a>
+                            </div>
                         </div>
-                        <div>
-                            <a href="mailto:student@edu.ru" class="text-decoration-none">
-                                kaylyeva.e@edu.mirea.ru
-                            </a>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="img/ren.png" class="card- img-top" alt="Арты и рисунки в аниме-стиле" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Арты и рисунки в аниме-стиле</h5>
+                                </div>
+                                <a href="page.html" class="btn btn-outline-warning">
+                                    Посмотреть все
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="img/genos.jpg" class="card-img-top" alt="Рисунки карандашом" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Рисунки карандашом</h5>
+                                </div>
+                                <a href="page.html" class="btn btn-outline-dark">
+                                    Посмотреть все
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="img/haku.jpg" class="card-img-top" alt="Рисунки чернилами" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Рисунки чернилами</h5>
+                                </div>
+                                <a href="page.html" class="btn btn-outline-primary">
+                                    Посмотреть все
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="img/doom.jpg" class="card-img-top" alt="Арты в комикс-стиле" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Арты в комикс-стиле</h5>
+                                </div>
+                                <a href="page.html" class="btn btn-outline-info">
+                                    Посмотреть все
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="img/kl2021.jpg" class="card-img-top" alt="Портреты" style="height: 300px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Портреты</h5>
+                                </div>
+                                <a href="page.html" class="btn btn-outline-indigo">
+                                    Посмотреть все
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="me-3 text-dark">
-                            <i class="bi bi-github fs-5"></i>
-                        </div>
-                        <div>
-                            <a href="https://github.com/username" target="_blank" class="text-decoration-none">
-                                GitHub: RR20040305
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex align-items-center">
-                        <div class="me-3 text-success">
-                            <i class="bi bi-geo-alt-fill fs-5"></i>
-                        </div>
-                        <div>Москва, Россия</div>
-                    </div>
-                </div>               
+                </div>
             </div>
         </section>
     </main>
@@ -205,6 +204,6 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body> 
 </html>
