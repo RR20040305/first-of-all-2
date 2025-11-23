@@ -2,66 +2,40 @@
 <html lang="ru"> 
 <head> 
     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Главная - Портфолио</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrapicons@1.11.1/font/bootstrap-icons.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon"> 
     <meta property="og:type" content="website"> 
-    <meta property="og:title" content="Заголовок страницы"> 
-    <meta property="og:description" content="Описание страницы"> 
+    <meta property="og:title" content="Главная - Портфолио"> 
+    <meta property="og:description" content="Портфолио графического художника и студента-разработчика"> 
     <meta property="og:image" content="https://.../link-to-image.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-
-    <style>
-        .indigo-500 {
-            background-color: var(--bs-indigo);
-            color: white;
-        }
-        .blue-300 {
-            background-color: #93c5fd;
-            color: white;
-        }
-        .indigo-light {
-            background-color: #9467be;
-            color: white;
-        }
-        body {
-            background-image: url('img/background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            margin: 0;
-            padding: 0;
-            height: 200hv;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head> 
-<body> 
+<body class="page"> 
+
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a> 
+
     <div class="container-fluid p-0">
-        <header class="blue-300 text-white py-4">  
+        <header class="header py-4">  
             <div class="container"> 
                 <div class="row align-items-center"> 
                     <div class="col"> 
-                        <h1 class="h3 mb-1">Моё Портфолио</h1> 
-                        <p class="mb-0 opacity-75">Графический художник и студент-разработчик</p>
+                        <h1 class="h3 mb-1 section-title">Моё Портфолио</h1> 
+                        <p class="mb-0 opacity-75 hero__greeting">Графический художник и студент-разработчик</p>
                     </div> 
                     <div class="col-auto"> 
-                        <span class="badge indigo-light text-light">ЭФБО-10-24</span> 
+                        <span class="badge indigo-light">ЭФБО-10-24</span> 
                     </div> 
                 </div> 
             </div> 
         </header> 
     </div>
     
-    <div class="container-fluid p-0">
-        <img src="img/cover.png" alt="Обложка" class="img-fluid" object-fit: cover;>
-    </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs- toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -72,13 +46,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="works.html">
-                            <i class="bi bi-newspaper me-1"></i>Работы
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-newspaper me-1"></i>Проекты
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            <i class="bi bi-code-slash me-1"></i>Обо мне
+                        <a class="nav-link" href="diary.html">
+                            <i class="bi bi-code-slash me-1"></i>Дневник
                         </a>
                     </li>
                     <li class="nav-item">
@@ -91,30 +65,63 @@
         </div>
     </nav>
 
-    <main class="container my-4">
+    <main id="main" class="container my-4">
         <section class="mb-5">
             <div class="card shadow-sm">
                 <div class="card-body p-4">
                     <div class="row align-items-center">
                         <div class="col-md-3 text-center mb-3 mb-md-0">
-                            <img src="img/morning.jpg" alt="Фото студента" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                            <figure class="hero__image"> 
+                                <picture> 
+                                    <!-- Современные форматы с адаптивностью -->
+                                    <source type="image/avif" 
+                                            srcset="img/hero-150.avif 150w, 
+                                                    img/hero-200.avif 200w, 
+                                                    img/hero-300.avif 300w" 
+                                            sizes="(max-width: 480px) 120px,
+                                                   (max-width: 768px) 150px,
+                                                   200px"> 
+                                    <source type="image/webp" 
+                                            srcset="img/hero-150.webp 150w, 
+                                                    img/hero-200.webp 200w, 
+                                                    img/hero-300.webp 300w" 
+                                            sizes="(max-width: 480px) 120px,
+                                                   (max-width: 768px) 150px,
+                                                   200px"> 
+                                    <!-- Запасной JPEG с поддержкой Retina -->
+                                    <img class="hero__photo responsive-image" 
+                                         src="img/hero-200.jpg" 
+                                         srcset="img/hero-150.jpg 150w, 
+                                                 img/hero-200.jpg 200w, 
+                                                 img/hero-300.jpg 300w,
+                                                 img/hero-400.jpg 400w 2x" 
+                                         sizes="(max-width: 480px) 120px,
+                                                (max-width: 768px) 150px,
+                                                200px" 
+                                         width="200" 
+                                         height="200" 
+                                         alt="Портрет студента" 
+                                         loading="eager"
+                                         decoding="async"> 
+                                </picture> 
+                            </figure>
                         </div>
-                        <div class="col-md-9">
-                            <h2 class="card-title h4 text-primary">Кайлыева Елена Хасановна</h2>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <h2 class="card-title h4 text-primary">
+                                Кайлыева Елена
+                            </h2>
                             <p class="card-text text-muted mb-2">
-                                <i class="bi bi-bookmark-check-fill text-primary"></i>
-                                Студент группы ЭФБО-10-24
+                                <i class="bi bi-bookmark-check-fill"></i>Мои Проекты
                             </p>
-                            <p class="card-text">
-                                Графический художник, дизайнер персонажей. Также владею техникой рисунка на бумаге.
-                            </p>
-                            <div class="d-flex gap-2 flex-wrap">
-                                <span class="badge bg-danger">CG</span>
-                                <span class="badge bg-warning">Аниме-стиль</span>
-                                <span class="badge indigo-500">Портрет</span>
-                                <span class="badge bg-primary">Чернила</span>
-                                <span class="badge bg-info">Комикс-стиль</span>
-                                <span class="badge bg-dark">Карандаш</span>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-2 flex-wrap to-right">
+                                <span class="badge bg-secondary jumping">Все</span>
+                                <span class="badge indigo-light jumping">HTML</span>
+                                <span class="badge bg-primary jumping">CSS</span>
+                                <span class="badge bg-info jumping">React</span>
+                                <span class="badge bg-warning jumping">JavaScript</span>
+                                <span class="badge bg-danger jumping">Bootstrap</span>
                             </div>
                         </div>                        
                     </div>
@@ -122,222 +129,239 @@
             </div>
         </section>
 
+        <!-- НОВАЯ СЕКЦИЯ: Демонстрация техники разных изображений для разных экранов -->
         <section class="mb-5">
             <div class="card shadow-sm">
-                <div class="card-header bg-light">
-                    <h3 class="card-title h5 mb-0">
-                        <i class="bi bi-person-circle text-primary"></i> 
-                        Обо мне
+                <div class="card-header">
+                    <h3 class="card-title h5 mb-0 section-title">
+                        <i class="bi bi-image text-primary"></i>
+                        Техника адаптивных изображений
                     </h3>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">
-                        Я реализую свой творческий потенциал, создавая уникальных персонажей на бумаге и в цифре.
-                        Владею несколькими известными стилями рисования, а также имею свой собственный узнаваемый и уникальный стиль.
-                    </p>
-                    <p class="card-text">
-                        Мои основные интересы: создание персонажей для аниме, игр, мультфильмов.
-                        Кроме того, могу нарисовать уже известных персонажей в своем стиле по вашему желанию.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <div class="card shadow-sm">
-                <div class="card-header bg-light">
-                    <h3 class="card-title h5 mb-0">
-                        <i class="bi bi-tools text-primary"></i> Мои навыки
-                    </h3>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>CG</span>
-                                    <span class="text-primary">🍓</span>
-                                </div>
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar bg-danger" style="width: 100%"></div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Аниме-стиль</span>
-                                    <span class="text-primary">🌅</span>
-                                </div>
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar bg-warning" style="width: 100%"></div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Карандаш</span>
-                                    <span class="text-primary">🦇</span>
-                                </div>
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar bg-dark" style="width: 100%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Портрет</span>
-                                    <span class="text-primary">💜</span>
-                                </div>
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar indigo-500" style="width: 100%"></div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Чернила</span>
-                                    <span class="text-primary">🌊</span>
-                                </div>
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar bg-primary" style="width: 100%"></div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Комикс-стиль</span>
-                                    <span class="text-primary">🧊</span>
-                                </div>
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar bg-info" style="width: 100%"></div>
-                                </div>
-                            </div>
-                        </div>                    
+                    <h4 class="h6 mb-3">Разные изображения для разных размеров экранов</h4>
+                    <div class="image-container mb-4">
+                        <picture>
+                            <!-- Большое изображение для десктопов -->
+                            <source media="(min-width: 1200px)" srcset="img/wide-desktop.jpg">
+                            <!-- Среднее для планшетов -->
+                            <source media="(min-width: 768px)" srcset="img/tablet.jpg">
+                            <!-- Маленькое для мобильных -->
+                            <img src="img/mobile.jpg" 
+                                 alt="Адаптивное изображение для разных устройств" 
+                                 class="responsive-image"
+                                 loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="explanation">
+                        <h5>Что происходит:</h5>
+                        <ul>
+                            <li><strong>Десктопы (1200px+):</strong> wide-desktop.jpg</li>
+                            <li><strong>Планшеты (768px-1199px):</strong> tablet.jpg</li>
+                            <li><strong>Мобильные (до 767px):</strong> mobile.jpg</li>
+                            <li>Браузер автоматически выбирает подходящее изображение</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-5">
+        <section class="mb-5 projects-area">
             <div class="card shadow-sm">
-                <div class="card-header bg-light">
-                    <h3 class="card-title h5 mb-0">
+                <div class="card-header">
+                    <h3 class="card-title h5 mb-0 section-title">
                         <i class="bi bi-folder-fill text-primary"></i>
                         Примеры моих работ
                     </h3>
                 </div>
                 <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="card h-100">
-                                <img src="img/gladiator.png" class="card- img-top" alt="Гладиатор" style="height: 300px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Гладиатор</h5>
-                                    <p class="card-text small text-muted">
-                                        Оригинальный персонаж, вдохновленный сериалом "Спартак: Кровь и песок".
-                                    </p>
-                                    <div class="mb-2">
-                                        <span class="badge bg-danger">CG</span> 
-                                        <span class="badge bg-info">Комикс-стиль</span>
+                    <div class="projects-container">
+                        <!-- Проект 1 - с улучшенной адаптивностью -->
+                        <div class="project-card">
+                            <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                                <div class="card h-100 responsive-card border-0">
+                                    <picture>
+                                        <!-- Разные изображения для разных экранов -->
+                                        <source media="(min-width: 1200px)" srcset="img/project1-desktop.webp" type="image/webp">
+                                        <source media="(min-width: 768px)" srcset="img/project1-tablet.webp" type="image/webp">
+                                        <source srcset="img/project1-mobile.webp" type="image/webp">
+                                        <source media="(min-width: 1200px)" srcset="img/project1-desktop.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/project1-tablet.jpg">
+                                        <img src="img/project1-mobile.jpg" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Личный сайт" 
+                                             width="300" 
+                                             height="200" 
+                                             style="height: 150px;" 
+                                             loading="lazy"
+                                             decoding="async">
+                                    </picture>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Личный сайт</h5>
+                                        <p class="card-description">Мой личный сайт с адаптивным дизайном</p>
+                                        <div class="mb-2">
+                                            <span class="badge indigo-light jumping">HTML</span> 
+                                            <span class="badge bg-primary jumping">CSS</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100">
-                                <img src="img/albedo.png" class="card- img-top" alt="Альбедо" style="height: 300px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Альбедо</h5>
-                                    <p class="card-text small text-muted">
-                                        Персонаж из популярного аниме в моем стиле.
-                                    </p>
-                                    <div class="mb-2">
-                                        <span class="badge bg-danger">CG</span> 
-                                        <span class="badge bg-warning">Аниме-стиль</span> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100">
-                                <img src="img/butcher.jpg" class="card-img-top" alt="Бутчер" style="height: 300px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Билли Бутчер</h5>
-                                    <p class="card-text small text-muted">
-                                        Персонаж из сериала "Пацаны".                                        
-                                    </p>
-                                    <div class="mb-2">
-                                        <span class="badge bg-primary">Чернила</span>
-                                        <span class="badge indigo-500">Портрет</span>
-                                    </div>
-                                </div>
-                            </div>
+                            </button>
                         </div>
 
-                        <div class="col-md-4">
-                            <div class="card h-100">
-                                <img src="img/anime1.jpg" class="card-img-top" alt="Аниме девочка" style="height: 300px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">ОС</h5>
-                                    <p class="card-text small text-muted">
-                                        Мой оригинальный персонаж.                                        
-                                    </p>
-                                    <div class="mb-2">
-                                        <span class="badge bg-primary">Чернила</span>
-                                        <span class="badge bg-warning">Аниме-стиль</span>
+                        <!-- Остальные проекты остаются без изменений -->
+                        <!-- Проект 2 -->
+                        <div class="project-card">
+                            <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                                <div class="card h-100 responsive-card border-0">
+                                    <picture>
+                                        <source type="image/webp" srcset="img/2.webp">
+                                        <img src="img/2.png" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Todo-приложение" 
+                                             width="300" 
+                                             height="200" 
+                                             style="height: 150px;" 
+                                             loading="lazy"
+                                             decoding="async">
+                                    </picture>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Todo-приложение</h5>
+                                        <p class="card-description">Мое туду-приложение с локальным хранилищем</p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-warning jumping">JavaScript</span> 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </button>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card h-100">
-                                <img src="img/1annamary.png" class="card-img-top" alt="Роуг" style="height: 300px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Роуг</h5>
-                                    <p class="card-text small text-muted">
-                                        Персонаж из комиксов Marvel.                                        
-                                    </p>
-                                    <div class="mb-2">
-                                        <span class="badge bg-danger">CG</span>
-                                        <span class="badge bg-info">Комикс-стиль</span>
+
+                        <!-- Проект 3 -->
+                        <div class="project-card">
+                            <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                                <div class="card h-100 responsive-card border-0">
+                                    <picture>
+                                        <source type="image/webp" srcset="img/3.webp">
+                                        <img src="img/3.jpg" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Интернет-магазин" 
+                                             width="300" 
+                                             height="200" 
+                                             style="height: 150px;" 
+                                             loading="lazy"
+                                             decoding="async">
+                                    </picture>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Интернет-магазин</h5>
+                                        <p class="card-description">Адаптивный интернет-магазин на React</p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-info jumping">React</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </button>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card h-100">
-                                <img src="img/kl2021.jpg" class="card-img-top" alt="Портрет" style="height: 300px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Портрет девушки</h5>
-                                    <p class="card-text small text-muted">
-                                        Портрет какой-то девушки.                                        
-                                    </p>
-                                    <div class="mb-2">
-                                        <span class="badge bg-danger">CG</span>
-                                        <span class="badge indigo-500">Портрет</span>
+                        
+                        <!-- Проект 4 -->
+                        <div class="project-card">
+                            <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                                <div class="card h-100 responsive-card border-0">
+                                    <picture>
+                                        <source type="image/webp" srcset="img/4.webp">
+                                        <img src="img/4.jpg" 
+                                             class="card-img-top object-fit-cover" 
+                                             alt="Портфолио" 
+                                             width="300" 
+                                             height="200" 
+                                             style="height: 150px;" 
+                                             loading="lazy"
+                                             decoding="async">
+                                    </picture>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Портфолио</h5>
+                                        <p class="card-description">Адаптивное портфолио с современным дизайном</p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-danger jumping">Bootstrap</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </button>
                         </div>
-                        <a href="works.html" class="btn btn-outline-info">
-                            Посмотреть больше
-                        </a>
                     </div>
                 </div>                
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-white py-4 mt-5">
+    <footer class="footer py-4 mt-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Портфолио художника-программиста. Все права защищены.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
-                    <a href="#" class="text-white text-decoration- none">Политика конфиденциальности</a>
+                <div class="text-md-center">
+                    <a href="contacts.html" class="text-decoration-none me-3">Контакты</a>
+                    <a href="#" class="text-decoration-none">Политика конфиденциальности</a>
                 </div>
             </div>
         </div>
     </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Модальные окна для каждого проекта -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title section-title" id="projectModalLabel1">Личный сайт</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="section-title">Описание</h4>
+                    <p>Адаптивный личный сайт с современным дизайном и оптимизированными изображениями.</p>
+                    <h4 class="section-title">Скриншоты</h4>
+                    <div class="gallery">
+                        <div class="gallery__item">
+                            <picture>
+                                <source type="image/webp" srcset="img/portfolioScreenshot1.webp">
+                                <img src="img/portfolioScreenshot1.png" 
+                                     class="gallery__image" 
+                                     alt="Главная страница личного сайта" 
+                                     loading="lazy"
+                                     decoding="async">
+                            </picture>
+                        </div>
+                        <div class="gallery__item">
+                            <picture>
+                                <source type="image/webp" srcset="img/portfolioScreenshot2.webp">
+                                <img src="img/portfolioScreenshot2.png" 
+                                     class="gallery__image" 
+                                     alt="Страница проектов" 
+                                     loading="lazy"
+                                     decoding="async">
+                            </picture>
+                        </div>
+                        <div class="gallery__item">
+                            <picture>
+                                <source type="image/webp" srcset="img/portfolioScreenshot3.webp">
+                                <img src="img/portfolioScreenshot3.png" 
+                                     class="gallery__image" 
+                                     alt="Страница контактов" 
+                                     loading="lazy"
+                                     decoding="async">
+                            </picture>
+                        </div>
+                        <div class="gallery__item">
+                            <picture>
+                                <source type="image/webp" srcset="img/portfolioScreenshot4.webp">
+                                <img src="img/portfolioScreenshot4.png" 
+                                     class="gallery__image" 
+                                     alt="Адаптивная версия" 
+                                     loading="lazy"
+                                     decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body> 
 </html>
