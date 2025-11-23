@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Дневник - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Дневник - Портфолио">
+    <meta property="og:description" content="Учебный дневник и прогресс обучения">
+    <meta property="og:image" content="https://.../link-to-image.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .progress-timeline {
+            background: linear-gradient(350deg, #8799b3 0%, #f2f6fd 100%);
+            border-radius: var(--radius);
+            padding: clamp(1rem, calc(1rem + 1vw), 2.5rem);
+            color: #5b636f;
+            box-shadow: var(--shadow);
+            width: 100%; 
+            max-width: 900px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(4, 26, 71, 0.1);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .indicator-completed {
+            background: #4caf50;
+            box-shadow: 0 0 10px #4caf50;
+        }
+
+        .indicator-progress {
+            background: #ff9800;
+            box-shadow: 0 0 10px #ff9800;
+            animation: pulse 2s infinite;
+        }
+
+        .timeline-date {
+            min-width: 70px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #5b636f;
+        }
+
+        .timeline-text {
+            flex: 1;
+            margin: 0 1rem;
+            font-size: clamp(0.875rem, calc(0.8rem + 0.3vw), 0.95rem);
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            min-width: 90px;
+            text-align: center;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .indicator-progress {
+                animation: none;
+            }
+        }
+
+        .course-progress {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .timeline-date {
+                min-width: 60px;
+                font-size: 0.8rem;
+            }
+            
+            .timeline-text {
+                margin: 0 0.5rem;
+                flex-basis: calc(100% - 130px);
+            }
+            
+            .status-badge {
+                min-width: 80px;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .progress-timeline {
+                padding: 1rem;
+            }
+            
+            .timeline-item {
+                padding: 0.5rem 0;
+            }
+            
+            .timeline-text {
+                flex-basis: 100%;
+                margin: 0.25rem 0;
+            }
+            
+            .status-badge {
+                margin-left: 22px; /* Выравнивание с индикатором */
+            }
+        }
+    </style>
+</head>
+<body class="page">
+
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <div class="container-fluid p-0">
+        <header class="blue-300 text-white py-4">  
+            <div class="container"> 
+                <div class="row align-items-center"> 
+                    <div class="col"> 
+                        <h1 class="h3 mb-1 section-title">Моё Портфолио</h1> 
+                        <p class="mb-0 opacity-75 hero__greeting">Графический художник и студент-разработчик</p>
+                    </div> 
+                    <div class="col-auto"> 
+                        <span class="badge indigo-light text-light">ЭФБО-10-24</span> 
+                    </div> 
+                </div> 
+            </div> 
+        </header> 
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i>Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-newspaper me-1"></i>Проекты
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="diary.html">
+                            <i class="bi bi-code-slash me-1"></i>Дневник
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">
+                            <i class="bi bi-telephone me-1"></i>Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="container my-4">
+        <section class="mb-5">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h2 class="card-title h5 mb-0 section-title">
+                        <i class="bi bi-person-circle text-primary"></i> 
+                        Мой учебный дневник
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <h3 class="h6 text-center text-dark mb-4 opacity-90 section-title">Прогресс обучения</h3>
+                    
+                    <div class="progress-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-indicator indicator-completed"></div>
+                            <span class="timeline-date">15 сен</span>
+                            <span class="timeline-text">Верстка макета сайта с адаптивными изображениями</span>
+                            <span class="status-badge bg-success bg-opacity-25 text-success">
+                                <i class="bi bi-check-lg me-1"></i>выполнено
+                            </span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-indicator indicator-completed"></div>
+                            <span class="timeline-date">20 сен</span>
+                            <span class="timeline-text">JavaScript основы и работа с формами</span>
+                            <span class="status-badge bg-success bg-opacity-25 text-success">
+                                <i class="bi bi-check-lg me-1"></i>выполнено
+                            </span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-indicator indicator-progress"></div>
+                            <span class="timeline-date">01 окт</span>
+                            <span class="timeline-text">Оптимизация изображений и работа с Picture element</span>
+                            <span class="status-badge bg-warning bg-opacity-25 text-warning">
+                                <i class="bi bi-arrow-repeat me-1"></i>в процессе
+                            </span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-indicator indicator-progress"></div>
+                            <span class="timeline-date">05 окт</span>
+                            <span class="timeline-text">Адаптивный дизайн и поддержка Retina-экранов</span>
+                            <span class="status-badge bg-warning bg-opacity-25 text-warning">
+                                <i class="bi bi-arrow-repeat me-1"></i>в процессе
+                            </span>
+                        </div>
+                    </div>
+
+                    <h3 class="h6 text-center text-dark mb-4 opacity-90 section-title">Текущие курсы</h3>
+
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <div class="course-progress">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-medium">Адаптивная верстка</span>
+                                    <span class="text-success">90%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-progress">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-medium">Оптимизация изображений</span>
+                                    <span class="text-primary">70%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-progress">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-medium">Modern CSS</span>
+                                    <span class="text-warning">50%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button class="btn btn-outline-primary btn-accessible" data-bs-toggle="modal" data-bs-target="#addSkillModal">
+                                    <i class="bi bi-plus-lg me-1"></i>Добавить запись
+                                </button>
+                            </div>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5 footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="text-md-center">
+                    <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                    <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для добавления записи -->
+    <div class="modal fade" id="addSkillModal" tabindex="-1" aria-labelledby="addSkillModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5 section-title" id="addSkillModalLabel">Добавить новую запись</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="courseName" class="form-label">Название курса/задачи</label>
+                            <input type="text" class="form-control" id="courseName" placeholder="Введите название" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="progressValue" class="form-label">Прогресс (%)</label>
+                            <input type="range" class="form-range" id="progressValue" min="0" max="100" step="5">
+                            <div class="form-text text-end" id="progressValueText">50%</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="statusSelect" class="form-label">Статус</label>
+                            <select class="form-select" id="statusSelect">
+                                <option value="completed">Выполнено</option>
+                                <option value="in-progress">В процессе</option>
+                                <option value="planned">Запланировано</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressRange = document.getElementById('progressValue');
+            const progressText = document.getElementById('progressValueText');
+            
+            if (progressRange && progressText) {
+                progressRange.addEventListener('input', function() {
+                    progressText.textContent = this.value + '%';
+                });
+            }
+
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (reducedMotion.matches) {
+                document.querySelectorAll('.indicator-progress').forEach(element => {
+                    element.style.animation = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
