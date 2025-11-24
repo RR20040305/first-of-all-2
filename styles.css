@@ -25,7 +25,6 @@
     --success-color: #4ade80;
 }
 
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
 html, body { 
     height: 100%; 
     margin: 0;
@@ -38,7 +37,6 @@ body {
     color: var(--text-color);
 }
 
-/* ===== ДОСТУПНОСТЬ И ФОКУС ===== */
 :focus-visible {
     outline: 3px solid var(--focus-color) !important;
     outline-offset: 2px !important;
@@ -52,7 +50,6 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(96, 165, 250, 0.25);
 }
 
-/* Стили для инвалидных полей */
 .is-invalid {
     border-color: var(--error-color) !important;
 }
@@ -61,7 +58,6 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(248, 113, 113, 0.25) !important;
 }
 
-/* ===== АДАПТИВНЫЕ ИЗОБРАЖЕНИЯ ===== */
 .responsive-image {
     width: 100%;
     height: auto;
@@ -76,7 +72,6 @@ body {
     margin: 0 auto;
 }
 
-/* Object-fit свойства */
 .object-fit-cover {
     object-fit: cover;
 }
@@ -90,7 +85,6 @@ body {
     object-fit: fill;
 }
 
-/* Адаптивная галерея */
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -114,13 +108,11 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== ЖИДКИЕ КОНТЕЙНЕРЫ ===== */
 .container-fluid,
 .container {
     padding-inline: clamp(var(--side), calc(var(--side) + 1vw), 2rem);
 }
 
-/* ===== FULL-BLEED СЕКЦИИ ===== */
 .full-bleed {
     margin-inline: calc(50% - 50vw);
     padding-inline: calc(50vw - 50%);
@@ -132,7 +124,6 @@ body {
     padding-inline: clamp(var(--side), calc(var(--side) + 1vw), 2rem);
 }
 
-/* ===== ДОСТУПНОСТЬ ===== */
 .visually-hidden { 
     position: absolute !important; 
     width: 1px !important; 
@@ -203,7 +194,6 @@ body {
     }
 }
 
-/* ===== LAYOUT ===== */
 .page { 
     min-height: 100vh;
     min-height: 100svh;
@@ -217,7 +207,6 @@ main {
     padding-inline: clamp(1rem, 0.5rem + 1vw, 2rem);
 }
 
-/* ===== НАВИГАЦИЯ ===== */
 .navbar {
     position: sticky !important;
     top: 0 !important;
@@ -248,7 +237,6 @@ main {
     outline-offset: 2px;
 }
 
-/* ===== ЦВЕТОВЫЕ КЛАССЫ ===== */
 .indigo-light {
     background-color: var(--indigo-color) !important;
     color: #ffffff !important;
@@ -259,7 +247,6 @@ main {
     color: #0f172a !important;
 }
 
-/* ===== ГЕРОЙ ===== */
 .hero__photo {
     width: clamp(150px, 20vw, 200px);    
     height: auto; 
@@ -273,7 +260,6 @@ main {
     margin: 0 auto;
 }
 
-/* ===== СЕТКА ПРОЕКТОВ ===== */
 .projects-container { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
@@ -281,7 +267,6 @@ main {
     margin-block: var(--space-2xl, 3rem);
 }
 
-/* ===== КАРТОЧКИ ===== */
 .card { 
     background: var(--card-bg); 
     border-radius: var(--radius); 
@@ -313,7 +298,6 @@ main {
     color: var(--text-color);
 }
 
-/* ===== ТИПОГРАФИКА ===== */
 .section-title { 
     font-size: clamp(1.5rem, calc(1rem + 1.5vw), 2.25rem) !important; 
     color: var(--text-color) !important;
@@ -334,13 +318,11 @@ main {
     color: var(--text-color);
 }
 
-/* ===== КНОПКИ ===== */
 .btn-accessible {
     padding-block: max(.5rem, calc((44px - 1em)/2)) !important;
     padding-inline: clamp(0.75rem, calc(0.5rem + 0.5vw), 1.25rem);
 }
 
-/* ===== ФОРМЫ ===== */
 .form-label {
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -375,7 +357,6 @@ main {
     opacity: 0.7;
 }
 
-/* ===== ФУТЕР ===== */
 .footer { 
     padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important; 
     padding-top: clamp(1rem, calc(0.75rem + 0.5vw), 1.5rem);
@@ -392,7 +373,6 @@ main {
     color: var(--primary-color) !important;
 }
 
-/* ===== АНИМАЦИИ ===== */
 .jumping {
     transition: transform 0.2s ease;
 }
@@ -401,7 +381,6 @@ main {
     transform: translateY(-2px);
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 768px) {
     .projects-container {
         grid-template-columns: 1fr;
@@ -440,7 +419,6 @@ main {
     }
 }
 
-/* Высококонтрастный режим */
 @media (prefers-contrast: high) {
     :root {
         --text-color: #ffffff;
@@ -457,7 +435,6 @@ main {
     }
 }
 
-/* Светлый режим - переопределяем для пользователей, предпочитающих светлую тему */
 @media (prefers-color-scheme: light) {
     :root {
         --text-color: #0f172a;
@@ -483,7 +460,6 @@ main {
     }
 }
 
-/* Дополнительные стили для Bootstrap компонентов */
 .text-muted {
     color: var(--text-light) !important;
 }
@@ -506,7 +482,6 @@ main {
     color: #ffffff !important;
 }
 
-/* Стили для прогресс-баров и других элементов */
 .progress {
     background-color: #374151;
 }
@@ -515,7 +490,6 @@ main {
     background-color: var(--primary-color);
 }
 
-/* Стили для баджей */
 .badge {
     color: #ffffff !important;
 }
@@ -544,12 +518,10 @@ main {
     background-color: #10b981 !important;
 }
 
-/* Стили для таблиц */
 .table {
     color: var(--text-color);
 }
 
-/* Стили для модальных окон */
 .modal-content {
     background-color: var(--card-bg);
     color: var(--text-color);
@@ -562,4 +534,8 @@ main {
 
 .btn-close {
     filter: invert(1);
+}
+
+.navbar-toggler {
+    background-color: #4ad7de;
 }

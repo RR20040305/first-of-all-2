@@ -73,7 +73,6 @@
                         <div class="col-md-3 text-center mb-3 mb-md-0">
                             <figure class="hero__image"> 
                                 <picture> 
-                                    <!-- Современные форматы с адаптивностью -->
                                     <source type="image/avif" 
                                             srcset="img/hero-150.avif 150w, 
                                                     img/hero-200.avif 200w, 
@@ -88,7 +87,6 @@
                                             sizes="(max-width: 480px) 120px,
                                                    (max-width: 768px) 150px,
                                                    200px"> 
-                                    <!-- Запасной JPEG с поддержкой Retina -->
                                     <img class="hero__photo responsive-image" 
                                          src="img/hero-200.jpg" 
                                          srcset="img/hero-150.jpg 150w, 
@@ -129,7 +127,6 @@
             </div>
         </section>
 
-        <!-- НОВАЯ СЕКЦИЯ: Демонстрация техники разных изображений для разных экранов -->
         <section class="mb-5">
             <div class="card shadow-sm">
                 <div class="card-header">
@@ -142,11 +139,8 @@
                     <h4 class="h6 mb-3">Разные изображения для разных размеров экранов</h4>
                     <div class="image-container mb-4">
                         <picture>
-                            <!-- Большое изображение для десктопов -->
                             <source media="(min-width: 1200px)" srcset="img/wide-desktop.jpg">
-                            <!-- Среднее для планшетов -->
                             <source media="(min-width: 768px)" srcset="img/tablet.jpg">
-                            <!-- Маленькое для мобильных -->
                             <img src="img/mobile.jpg" 
                                  alt="Адаптивное изображение для разных устройств" 
                                  class="responsive-image"
@@ -176,12 +170,10 @@
                 </div>
                 <div class="card-body">
                     <div class="projects-container">
-                        <!-- Проект 1 - с улучшенной адаптивностью -->
                         <div class="project-card">
                             <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal1">
                                 <div class="card h-100 responsive-card border-0">
                                     <picture>
-                                        <!-- Разные изображения для разных экранов -->
                                         <source media="(min-width: 1200px)" srcset="img/project1-desktop.webp" type="image/webp">
                                         <source media="(min-width: 768px)" srcset="img/project1-tablet.webp" type="image/webp">
                                         <source srcset="img/project1-mobile.webp" type="image/webp">
@@ -208,8 +200,6 @@
                             </button>
                         </div>
 
-                        <!-- Остальные проекты остаются без изменений -->
-                        <!-- Проект 2 -->
                         <div class="project-card">
                             <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal2">
                                 <div class="card h-100 responsive-card border-0">
@@ -235,7 +225,6 @@
                             </button>
                         </div>
 
-                        <!-- Проект 3 -->
                         <div class="project-card">
                             <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal3">
                                 <div class="card h-100 responsive-card border-0">
@@ -261,7 +250,6 @@
                             </button>
                         </div>
                         
-                        <!-- Проект 4 -->
                         <div class="project-card">
                             <button type="button" class="btn p-0 w-100 h-100 text-start" data-bs-toggle="modal" data-bs-target="#projectModal4">
                                 <div class="card h-100 responsive-card border-0">
@@ -303,7 +291,6 @@
         </div>
     </footer>
 
-    <!-- Модальные окна для каждого проекта -->
     <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
